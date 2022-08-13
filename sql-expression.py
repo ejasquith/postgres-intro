@@ -68,7 +68,9 @@ with db.connect() as connection:
 
     # Query 6 - select all tracks where the
     # composer is "Queen" from "Track" table
-    select_query = track_table.select().where(track_table.c.Composer == "Queen")
+    select_query = track_table.select().where(
+        track_table.c.Composer == "Queen"
+    )
 
     results = connection.execute(select_query)
     for result in results:
